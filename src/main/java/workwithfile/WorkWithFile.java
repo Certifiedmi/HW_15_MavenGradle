@@ -13,16 +13,19 @@ import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.counting;
 
-public class WorkWithFile  {
+public class WorkWithFile {
 
     private final static String fileSource = ("src/main/resources/data.txt");
     private final static String badWordsSource = ("src/main/resources/badwords.txt");
+    private final static int MINIMAL_LETTERS_NUMBER = 3;
     Scanner sc = new Scanner(new FileInputStream(new File(fileSource)));
     Scanner sc1 = new Scanner(new FileInputStream(new File(fileSource)));
-    private final static int MINIMAL_LETTERS_NUMBER = 3;
+    ArrayList<String> shortWords = new ArrayList<>();
     private int count = 0;
     private int countMoreThanThree = 0;
-    ArrayList<String>shortWords = new ArrayList<>();
+
+    public WorkWithFile() throws FileNotFoundException {
+    }
 
     public void wordCounter() {
         while (sc.hasNext()) {
@@ -36,7 +39,7 @@ public class WorkWithFile  {
         System.out.println("Sum of words in the file : " + count);
     }
 
-    public void smallWordsCounter () {
+    public void smallWordsCounter() {
         while (sc1.hasNext()) {
             String[] s1 = sc1.next().split("d*[.@:=#-]");
             for (String value : s1) {
@@ -48,7 +51,7 @@ public class WorkWithFile  {
             }
         }
         System.out.println("Sum of words which have more than 3 char : " + countMoreThanThree);
-        System.out.println("List of small words:" +"\n" + shortWords);
+        System.out.println("List of small words:" + "\n" + shortWords);
     }
 
     public void frequentWordsCounter() throws IOException {
@@ -75,7 +78,5 @@ public class WorkWithFile  {
             }
         }
         System.out.println("List of bad words: " + new String(Files.readAllBytes(Paths.get(badWordsSource))));
-    }
-    public WorkWithFile() throws FileNotFoundException {
     }
 }
