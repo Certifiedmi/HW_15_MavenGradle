@@ -1,6 +1,6 @@
-package executor;
+package com.yurchyk.executor;
 
-import workwithfile.WorkWithFile;
+import com.yurchyk.workwithfile.WorkWithFile;
 
 import java.io.IOException;
 

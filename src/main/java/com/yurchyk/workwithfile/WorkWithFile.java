@@ -1,4 +1,4 @@
-package workwithfile;
+package com.yurchyk.workwithfile;
 
 import java.io.*;
 import java.nio.file.Files;

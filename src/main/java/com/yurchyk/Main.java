@@ -1,4 +1,6 @@
-import executor.Executor;
+package com.yurchyk;
+
+import com.yurchyk.executor.Executor;
 
 import java.io.IOException;
 
